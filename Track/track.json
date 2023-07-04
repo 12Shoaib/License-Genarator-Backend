@@ -1,0 +1,65 @@
+[
+    {
+      "newData": {
+        "operatingFrequencyMin": "10",
+        "operatingFrequencyMax": "10",
+        "maxScenarioTime": "10",
+        "maxHorizontalRange": "10",
+        "maxVerticalRange": "10",
+        "maxCpiLength": "10",
+        "scenarioModes": "Shoaib",
+        "AcpModeEnable": true,
+        "minRcs": "10",
+        "maxRcs": "10",
+        "systemSettings": "Salaman"
+      }
+    },
+    {
+      "timeStamp": "2023-07-04T09:22:45.008Z",
+      "operatingFrequencyMin": "15",
+      "operatingFrequencyMax": ".36",
+      "maxScenarioTime": ".36",
+      "maxHorizontalRange": "145",
+      "maxVerticalRange": "452",
+      "maxCpiLength": "124",
+      "scenarioModes": "Test_Scenario",
+      "AcpModeEnable": true,
+      "minRcs": "12.5",
+      "maxRcs": "2.3",
+      "systemSettings": "Final_Check"
+    },
+    {
+      "dateAndTime": "2023-07-04T10:36:35.837Z",
+      "operatingFrequencyMin": "10",
+      "operatingFrequencyMax": "10",
+      "maxScenarioTime": "10",
+      "maxHorizontalRange": "10",
+      "maxVerticalRange": "10",
+      "maxCpiLength": "10",
+      "scenarioModes": "10",
+      "AcpModeEnable": true,
+      "minRcs": "10",
+      "maxRcs": "10",
+      "systemSettings": "10"
+    },
+    {
+      "dateAndTime": "2023-07-04T10:50:16.639Z",
+      "operatingFrequencyMin": "25",
+      "operatingFrequencyMax": "25",
+      "maxScenarioTime": "252",
+      "maxHorizontalRange": "52",
+      "maxVerticalRange": "52",
+      "maxCpiLength": "52",
+      "scenarioModes": ["Shoaib", "basit"],
+      "AcpModeEnable": false,
+      "minRcs": "10",
+      "maxRcs": "10",
+      "systemSettings": []
+    },
+    {
+      "dateAndTime": "2023-07-04T10:59:10.647Z",
+       "secretKey": "mySecretKey",
+       "name": "./RTS-lincense2.json"
+    }
+  ]
+  
