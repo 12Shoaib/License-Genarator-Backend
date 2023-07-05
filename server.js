@@ -20,15 +20,17 @@ app.get("/", (req, res) => {
 });
 
 app.post("/encrypt", (req, res) => {
-  const newData = req.body;
+  const newData = req.body.userDetails;
+  const fileDetails = req.body.confindentialDetails;
   const jsonData = JSON.stringify(newData);
-  const dateAndTime = new Date().toISOString();
-  const dataWithTimeStamp = { dateAndTime, ...newData };
 
   // Perform encryption on the data
   const algorithm = "aes-256-ctr"; // Choose an encryption algorithm
-  let key = "MySecretKey"; // Generate a random encryption key
+  const keyName = fileDetails.key;
+  console.log(keyName);
+  let key = keyName; // Generate a random encryption key
   key = crypto
+
     .createHash("sha256")
     .update(String(key))
     .digest("base64")
@@ -40,8 +42,9 @@ app.post("/encrypt", (req, res) => {
     cipher.update(jsonData),
     cipher.final(),
   ]);
+  const fileName = `${fileDetails.fileName}.lic`; //fileName construction
   // Write the encrypted data to a file
-  fs.writeFile("Track/RTS-license2.lic", encryptedData, (err) => {
+  fs.writeFile(`Track/${fileName}`, encryptedData, (err) => {
     if (err) {
       console.error(err);
       return res.status(500).send("Internal Server Error");
@@ -54,8 +57,8 @@ app.post("/encrypt", (req, res) => {
       return res.status(500).send("Internal Server Error");
     }
     let jsonData = JSON.parse(data);
-    jsonData = [...jsonData, dataWithTimeStamp]; // Add the new data to the existing JSON data array
-    console.log(jsonData);
+    jsonData = [...jsonData, newData]; // Add the new data to the existing JSON data array
+    console.log(newData);
     // Write the updated JSON data back to the file
     fs.writeFile("Track/data.json", JSON.stringify(jsonData), "utf8", (err) => {
       if (err) {
@@ -63,17 +66,20 @@ app.post("/encrypt", (req, res) => {
         return res.status(500).send("Internal Server Error");
       }
 
-      res.status(201).json(dataWithTimeStamp); // Send a response indicating success and the newly added data
+      res.status(201).json(newData); // Send a response indicating success and the newly added data
     });
   });
 });
 
 app.post("/decrypt", (req, res) => {
-  const encryptedData = req.body;
-  const jsonData = JSON.stringify(encryptedData);
+  const encryptedData = req.body.fileLocation.location;
+  let key = req.body.key;
+  console.log(encryptedData);
+  console.log(key);
+  const jsonData = JSON.parse(encryptedData);
+  console.log(jsonData);
 
   const algorithm = "aes-256-ctr";
-  let key = "MySecretKey";
   key = crypto
     .createHash("sha256")
     .update(String(key))
