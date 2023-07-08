@@ -1,0 +1,14 @@
+{
+  "scenario": {
+    "operatingFrequency": { "min": 9, "max": 40 },
+    "maxScenarioTime": 100,
+    "maxHorizontalRange": 20,
+    "maxVerticalRange": 10,
+    "maxCpiLength": 4,
+    "scenarioModes": ["Air-Air", "Air-Ground", "Ground-Air", "Ground-Ground"]
+  },
+  "target": { "minRcs": { "min": 20, "max": 40 } },
+  "systemSettingOptions": [
+    { "name": "SystemSettings", "label": "System Settings" }
+  ]
+}

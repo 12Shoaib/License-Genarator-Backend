@@ -1,0 +1,15 @@
+{
+  "scenario": {
+    "operatingFrequency": { "min": 1, "max": 2 },
+    "maxScenarioTime": 3,
+    "maxHorizontalRange": 4,
+    "maxVerticalRange": 5,
+    "maxCpiLength": 6,
+    "AcpModeEnable": true,
+    "scenarioModes": ["Air-Ground", "Ground-Ground"]
+  },
+  "target": { "minRcs": { "min": "1", "max": "2" } },
+  "systemSettingOptions": [
+    { "name": "SingleFixedTarget", "label": "Single Fixed Target" }
+  ]
+}

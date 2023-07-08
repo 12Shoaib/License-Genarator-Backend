@@ -1,0 +1,17 @@
+{
+  "scenario": {
+    "operatingFrequency": { "min": 1, "max": 2 },
+    "maxScenarioTime": 3,
+    "maxHorizontalRange": 4,
+    "maxVerticalRange": 5,
+    "maxCpiLength": 6
+  },
+  "target": { "minRcs": { "min": 10, "max": 20 } },
+  "systemSettingOptions": [
+    { "name": "SingleFixedTarget", "label": "Single Fixed Target" },
+    { "name": "SingleFixedTarget", "label": "Single Fixed Target" },
+    { "name": "SingleFixedTarget", "label": "Single Fixed Target" },
+    { "name": "SystemSettings", "label": "System Settings" },
+    { "name": "InputAddedWithAGC", "label": "Input Added With AGC" }
+  ]
+}
